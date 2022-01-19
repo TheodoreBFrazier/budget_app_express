@@ -1,10 +1,8 @@
-const { response } = require("express");
 const express = require("express");
 
 const app = express();
 
 console.log(express)
-
 
 
 app.get("/", (request, response) => {
@@ -40,6 +38,8 @@ app.get("edit", (request, response) => {
 //app.listen(7777, () => {
     //console.log("Listening for request on port 7777");
 //})
+
+app.listen(7777)
 
 // EXPORTING APP
 
