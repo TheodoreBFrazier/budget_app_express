@@ -1,0 +1,14 @@
+{
+  "name": "budget_app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Theodore Frazier",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
