@@ -8,7 +8,7 @@ console.log(express)
 
 
 app.get("/", (request, response) => {
-    response.send("Budgeting app!")
+    response.send("Welcome to the budgeting app!")
 })
 
 //Route for index 
