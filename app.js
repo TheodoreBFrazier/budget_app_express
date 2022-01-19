@@ -5,24 +5,35 @@ const app = express();
 
 console.log(express)
 
+
+
 app.get("/", (request, response) => {
     response.send("Budgeting app!")
 })
+
+//Route for index 
 
 app.get("/index", (request, response) => {
     response.send("Here is the index.")
 })
 
+//Route for new expense
+
 app.get("/new", (request, response) => {
     response.send("Add a new expense")
 })
+
+//Route for show 
 
 app.get("show", (request, response) => {
     response.send("Show expenses!")
 })
 
 
-app.get("edit")
+
+app.get("edit", (request, response) => {
+    response.send("Edit function here")
+})
 
 // App listen function 
 
