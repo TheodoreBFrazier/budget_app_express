@@ -12,5 +12,5 @@ const PORT = process.env.PORT
 // LISTENER
 
 app.listen(PORT, () => {
-    console.log(` Now listening on port ${PORT}`);
+    console.log(` Now listening on port ${PORT} 😀 `);
 })
