@@ -23,23 +23,23 @@ app.get("/new", (request, response) => {
 
 //Route for show 
 
-app.get("show", (request, response) => {
+app.get("/show", (request, response) => {
     response.send("Show expenses!")
 })
 
 
 
-app.get("edit", (request, response) => {
+app.get("/edit", (request, response) => {
     response.send("Edit function here")
 })
 
 // App listen function 
 
-//app.listen(7777, () => {
-    //console.log("Listening for request on port 7777");
-//})
+app.listen(7777, () => {
+    console.log("Listening for request on port 7777 😂");
+})
 
-app.listen(7777)
+
 
 // EXPORTING APP
 
