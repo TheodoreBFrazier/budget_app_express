@@ -8,22 +8,25 @@ const app = express();
 console.log(express)
 
 
+//Home page
+
 app.get("/", (request, response) => {
-    response.send("Welcome to the budgeting app!!");
+    response.send(`
+    <h1>Welcome to the budgeting app!! 😮</h1>`);
 })
 
 //Route for index 
 
-app.get("/expenses", (request, response) => {
+app.get("/transactions", (request, response) => {
     response.send(expenses); //changing to req.params
 })
 
-app.get("/expenses/:index", (request, response) => {
-    const { index } = request.params
-    if (expenses[index]) {
-        response.send(expenses[index])
+app.get("/transactions/:id", (request, response) => {
+    const { id } = request.params;
+    if (expenses[id]) {
+        response.send(expenses[id]);
     } else {
-        response.send("Error no expense at index: " + index);
+        response.send("Error no expense at index: 🤦🏾‍♂️ " + id ) ;
     }
 })
 
