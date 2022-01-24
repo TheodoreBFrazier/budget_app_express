@@ -9,13 +9,17 @@ console.log(express)
 
 
 app.get("/", (request, response) => {
-    response.send("Welcome to the budgeting app!!🤪");
+    response.send("Welcome to the budgeting app!!");
 })
 
 //Route for index 
 
 app.get("/expenses", (request, response) => {
     response.send(expenses); //changing to req.params
+})
+
+app.get("/expenses/:index", (request, response) => {
+    response.send(expenses[request.params.index]); //changing to req.params
 })
 
 //Route for new expense
