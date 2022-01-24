@@ -19,8 +19,18 @@ app.get("/expenses", (request, response) => {
 })
 
 app.get("/expenses/:index", (request, response) => {
-    response.send(expenses[request.params.index]); //changing to req.params
+    const { index } = request.params
+    if (expenses[index]) {
+        response.send(expenses[index])
+    } else {
+        response.send("Error no expense at index: " + index);
+    }
 })
+
+
+
+
+
 
 //Route for new expense
 
@@ -43,7 +53,7 @@ app.get("/edit", (request, response) => {
 // App listen function 
 
 //app.listen(7777, () => {
-    //console.log("Listening for request on port 7777 😀😂");
+//console.log("Listening for request on port 7777 😀😂");
 //})
 
 

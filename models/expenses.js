@@ -22,11 +22,11 @@ module.exports = [
 
     },
     {
-        expense_name: "Refill coffee card",
-        amount: 50.00,
-        date: "January 4",
-        from: "Starbucks Coffee",
-        category: "food & drink"
+        expense_name: "haircut",
+        amount: 25.00,
+        date: "January 5",
+        from: "Jay's barber shop",
+        category: "self care"
 
     },
     {
