@@ -19,11 +19,23 @@ expensesRoute.get("/:id", (request, response) => {
     }
 })
 
-//Route to create a new transaction
+//Route to create a NEW transaction
 
 expensesRoute.post("/", (request, response) => { //post allows us to pass date through response body
     expenseArray.push(request.body); //expenseArray is stored in memory - pushing HTML for data into it
     response.json(expenseArray[expenseArray.length - 1])
 })
+
+//Route to delete a transaction @ index
+
+expensesRoute.delete("/:id", (requestion, response) => {
+    const { id } = request.params;
+    if(expenseArray[id]) {
+        let removedExpense = expenseArray.slice(id, 1);
+        response.json(removed[0])
+    } else {
+        response.status(404).json({error: "Index not found."})
+    }
+}) 
 
 module.exports = expensesRoute;
