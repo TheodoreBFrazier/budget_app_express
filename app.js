@@ -13,7 +13,7 @@ app.get("/", (request, response) => {
     <h1>Welcome to the budgeting app!! 😮</h1>`);
 })
 
-app.use("/transactions", expensesController)
+app.use("/transactions", expensesController) //now all URLs start with "transactions"
 
 //404 Page 
 

@@ -9,8 +9,7 @@ expensesRoute.get("/", (request, response) => {
 
 //Route for index 
 
-
-expensesRoute.get("/transactions/:id", (request, response) => {
+expensesRoute.get("/:id", (request, response) => {
     const { id } = request.params;
     if (expenseArray[id]) {
         response.send(expenseArray[id]);
