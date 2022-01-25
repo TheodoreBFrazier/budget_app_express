@@ -3,10 +3,21 @@ const express = require("express");
 // Make index of all the expenses
 const expenses = require("./models/expenses.js")
 
+//Configuration
 const app = express();
 
 console.log(express)
 
+// Using expenses as base of the routes
+
+const expensesController = require("./Controllers/Controller.js");
+app.use("/expenses", expensesController);
+
+//404 Page 
+
+app.get("*", (request, response) => {
+    response.status(404).json({ error: "Page not found"});
+})
 
 //Home page
 
