@@ -21,8 +21,6 @@ expensesRoute.get("/:id", (request, response) => {
 
 //Adding MIDDLEWARE
 
-
-
 //Route to create a NEW transaction
 
 expensesRoute.post("/",  (request, response) => { //post allows us to pass date through response body
@@ -35,7 +33,7 @@ expensesRoute.post("/",  (request, response) => { //post allows us to pass date 
 expensesRoute.delete("/:id", (request, response) => {
     const { id } = request.params;
     if (expenseArray[id]) {
-        let removedExpense = expenseArray.splice(req.params.id, 1);
+        let removedExpense = expenseArray.splice(request.params.id, 1);
         response.json(removed[0])
     } else {
         response.status(404).json({ error: "Index not found." })
