@@ -21,16 +21,11 @@ expensesRoute.get("/:id", (request, response) => {
 
 //Adding MIDDLEWARE
 
-const ValidateURL = (req, res, next) => {
-    console.log(
-        "This function checks the validity of the URL entered by the user"
-    );
-};
 
 
 //Route to create a NEW transaction
 
-expensesRoute.post("/", ValidateURL, (request, response) => { //post allows us to pass date through response body
+expensesRoute.post("/",  (request, response) => { //post allows us to pass date through response body
     expenseArray.push(request.body); //expenseArray is stored in memory - pushing HTML for data into it
     response.json(expenseArray[expenseArray.length - 1]);
 })

@@ -1,26 +1,6 @@
 {
-  "name": "budget_app",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "author": "Theodore Frazier",
-  "license": "ISC",
   "dependencies": {
-    "dotenv": "^14.2.0",
-    "expree": "^0.1.6",
+    "dotenv": "^14.3.2",
     "express": "^4.17.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TheodoreBFrazier/budget_app_express.git"
-  },
-  "keywords": [],
-  "bugs": {
-    "url": "https://github.com/TheodoreBFrazier/budget_app_express/issues"
-  },
-  "homepage": "https://github.com/TheodoreBFrazier/budget_app_express#readme",
-  "description": ""
+  }
 }

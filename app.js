@@ -18,7 +18,7 @@ app.use((req, res, next) => {
 
 
 
-app.get("/", validateURL, (request, response) => {
+app.get("/", (request, response) => {
     response.send(`
     <h1>Welcome to the budgeting app!! 😮</h1>`);
 })
