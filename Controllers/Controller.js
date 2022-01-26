@@ -32,12 +32,8 @@ expensesRoute.post("/", (request, response) => { //post allows us to pass date t
 //Route to DELETE a transaction @ index
 
 expensesRoute.delete("/:id", (request, response) => {
-    if (expenseArray[request.params.arrayIndex]) {
         const removedExpense = expenseArray.splice(request.params.arrayIndex, 1);
         response.status(200).json(removedExpense); //What does the 200 mean? 
-    } else {
-        res.status(404).json({ error: "Not found" })
-    }
 })
 
 module.exports = expensesRoute;
