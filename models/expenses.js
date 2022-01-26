@@ -11,21 +11,21 @@ module.exports = [
         amount: -14.00,
         date: "January 1",
         from: "Lyft",
-        category: "tranportation"
+        category: "tranportation",
     },
     {
         item_name: "Credit card payment",
         amount: -25.00,
         date: "January 1",
         from: "Discover",
-        category: "debt reduction"
+        category: "debt reduction",
     },
     {
         item_name: "Refill coffee card",
         amount: -50.00,
         date: "January 4",
         from: "Starbucks Coffee",
-        category: "food & drink"
+        category: "food & drink",
 
     },
     {
@@ -33,7 +33,7 @@ module.exports = [
         amount: -25.00,
         date: "January 5",
         from: "Jay's barber shop",
-        category: "self care"
+        category: "self care",
 
     },
     {
@@ -41,21 +41,21 @@ module.exports = [
         amount: -75.00,
         date: "January 8",
         from: "T-mobile",
-        category: "telecomm"
+        category: "telecomm",
     },
     {
         expense_name: "Cell Phone",
         amount: -75.00,
         date: "January 8",
         from: "T-mobile",
-        category: "telecomm"
+        category: "telecomm",
     },
     {
         item_name: "New sweater",
         amount: -200.00,
         date: "January 16",
         from: "Brooks Brothers",
-        category: "clothing"
+        category: "clothing",
     },
     {
         item_name: "Movie night",
