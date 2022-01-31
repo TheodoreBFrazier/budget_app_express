@@ -44,13 +44,6 @@ module.exports = [
         category: "telecomm",
     },
     {
-        expense_name: "Cell Phone",
-        amount: -75.00,
-        date: "January 8",
-        from: "T-mobile",
-        category: "telecomm",
-    },
-    {
         item_name: "New sweater",
         amount: -200.00,
         date: "January 16",
