@@ -70,6 +70,6 @@ module.exports = [
         date: "January 23",
         from: "Employer",
         category: "income",
-    },
+    }
 
 ];
