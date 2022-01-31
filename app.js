@@ -2,7 +2,7 @@ const express = require("express");
 //Configuration
 const app = express();
 const cors = require("cors");
-const expensesController = require("./Controllers/expensesController.js");
+const transactionsController = require("./Controllers/transactionsController.js");
 
 
 //adding MIDDLEWARE
@@ -15,7 +15,7 @@ app.get("/", (request, response) => {
     <h1>Welcome to the budgeting app!! 😮</h1>`);
 })
 
-app.use("/expenses", expensesController) //now all URLs start with "transactions"
+app.use("/transactions", transactionsController) //now all URLs start with "transactions"
 
 //404 Page 
 

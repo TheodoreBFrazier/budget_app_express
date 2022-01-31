@@ -1,22 +1,19 @@
 const { response } = require("express");
 const express = require("express");
-const expensesRoute = express.Router();
-const expenseArray = require("../models/expenses.js");
+const route = express.Router();
+const transactionArray = require("../models/transactions.js");
 
 // Expenses
-expensesRoute.get("/list", (request, response) => {
-    response.json(expenseArray) //We are sending json instead of string, so use res.json
+route.get("/", (request, response) => {
+    response.json(transactionArray) //We are sending json instead of string, so use res.json
 })
-
-//Trying something
-
 
 //Route for index ie. transactions/1
 
-expensesRoute.get("/:id", (request, response) => {
+route.get("/:id", (request, response) => {
     const { id } = request.params;
-    if (expenseArray[id]) {
-        response.send(expenseArray[id]);
+    if (transactionArray[id]) {
+        response.send(transactionArray[id]);
     } else {
         response.send("Error no expense at index: 🤦🏾‍♂️ " + id);
     }
@@ -26,26 +23,26 @@ expensesRoute.get("/:id", (request, response) => {
 
 //Route to create a NEW transaction
 
-expensesRoute.post("/", (request, response) => { //post allows us to pass date through response body
+route.post("/", (request, response) => { //post allows us to pass date through response body
     expenseArray.push(request.body); //expenseArray is stored in memory - pushing HTML for data into it
     response.json(expenseArray[expenseArray.length - 1]);
 })
 
 //Route to DELETE a transaction @ index
 
-expensesRoute.delete("/:id", (request, response) => {
+route.delete("/:id", (request, response) => {
     const removedExpense = expenseArray.splice(request.params.arrayIndex, 1);
     response.status(200).json(removedExpense); //What does the 200 mean? 
 })
 
 //Route to Update
 
-expensesRoute.put("/:id", (request, response) => {
+route.put("/:id", (request, response) => {
     expenseArray[request.params.arrayIndex] = request.body; //We use req.body to the value of array position we selected
     response.status(200).json(expenseArray[request.params.arrayIndex]);
 });
 
 //API is built!!! 🥳🥳
 
-module.exports = expensesRoute;
+module.exports = route;
 
