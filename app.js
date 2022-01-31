@@ -1,22 +1,13 @@
 const express = require("express");
-
 //Configuration
 const app = express();
-
-// Using expenses as base of the routes
+const cors = require("cors");
 const expensesController = require("./Controllers/expensesController.js");
 
 
 //adding MIDDLEWARE
 app.use(cors())
 app.use(express.json()) //----> to parse incoming JSON
-
-
-app.use((req, res, next) => {
-    console.log("This code runs for every request");
-    next();
-  });
-
 
 
 app.get("/", (request, response) => {

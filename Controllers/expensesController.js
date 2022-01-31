@@ -1,13 +1,15 @@
 const { response } = require("express");
 const express = require("express");
-const res = require("express/lib/response");
 const expensesRoute = express.Router();
 const expenseArray = require("../models/expenses.js");
 
 // Expenses
-expensesRoute.get("/", (request, response) => {
+expensesRoute.get("/list", (request, response) => {
     response.json(expenseArray) //We are sending json instead of string, so use res.json
 })
+
+//Trying something
+
 
 //Route for index ie. transactions/1
 
