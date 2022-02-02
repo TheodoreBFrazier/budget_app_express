@@ -30,8 +30,15 @@ transactionsRoutes.post("/", (request, response) => { //post allows us to pass d
 //Route to DELETE a transaction @ index
 
 transactionsRoutes.delete("/:index", (request, response) => {
-    const removedExpense = expenseArray.splice(request.params.arrayIndex, 1);
-    response.status(200).json(removedExpense); //What does the 200 mean? 
+    const { index } = request.params;
+
+    if (expenseArray[index]) {
+        let removedExpense = expenseArray.splice(request.params.arrayIndex, 1);
+        response.json(removedExpense[0]);
+    } else {
+        response.status(404).json({ error: "Not found" });
+    }
+    
 })
 
 //Route to Update
