@@ -67,5 +67,5 @@ transactionsRoutes.put("/:index", (request, response) => {
 
 
 
-    module.exports = route;
+    module.exports = transactionsRoutes;
 
