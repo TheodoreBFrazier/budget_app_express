@@ -22,21 +22,21 @@ transactionsRoutes.get("/:index", (request, response) => {
 
 //Route to create a NEW transaction
 
-route.post("/", (request, response) => { //post allows us to pass date through response body
+transactionsRoutes.post("/", (request, response) => { //post allows us to pass date through response body
     expenseArray.push(request.body); //expenseArray is stored in memory - pushing HTML for data into it
     response.json(expenseArray[expenseArray.length - 1]);
 })
 
 //Route to DELETE a transaction @ index
 
-route.delete("/:index", (request, response) => {
+transactionsRoutes.delete("/:index", (request, response) => {
     const removedExpense = expenseArray.splice(request.params.arrayIndex, 1);
     response.status(200).json(removedExpense); //What does the 200 mean? 
 })
 
 //Route to Update
 
-route.put("/:index", (request, response) => {
+transactionsRoutes.put("/:index", (request, response) => {
     expenseArray[request.params.arrayIndex] = request.body; //We use req.body to the value of array position we selected
     response.status(200).json(expenseArray[request.params.arrayIndex]);
 });
