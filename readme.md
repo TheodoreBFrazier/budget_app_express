@@ -5,7 +5,7 @@ https://github.com/TheodoreBFrazier/budget_app_express
 https://github.com/TheodoreBFrazier/budget_app_frontend
 
 ## Deployed Backend Link
-https://react-in-progress-budgeting-app.netlify.app
+https://tf-backend-budgetapp.herokuapp.com/
 
 ## Deployed Frontend Link
-https://express-budgeting-app-backend.herokuapp.com
+https://tf-backend-budgetapp.herokuapp.com/

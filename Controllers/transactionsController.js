@@ -1,21 +1,20 @@
-const { response } = require("express");
 const express = require("express");
-const route = express.Router();
+const transactionsRoutes = express.Router();
 const transactionArray = require("../models/transactions.js");
 
 // Expenses
-route.get("/", (request, response) => {
+transactionsRoutes.get("/", (request, response) => {
     response.json(transactionArray) //We are sending json instead of string, so use res.json
 })
 
 //Route for index ie. transactions/1
 
-route.get("/:id", (request, response) => {
-    const { id } = request.params;
-    if (transactionArray[id]) {
-        response.send(transactionArray[id]);
+transactionsRoutes.get("/:index", (request, response) => {
+    const { index } = request.params;
+    if (transactionArray[index]) {
+        response.send(transactionArray[index]);
     } else {
-        response.send("Error no expense at index: 🤦🏾‍♂️ " + id);
+        response.send("Error no expense at index: 🤦🏾‍♂️ " + index);
     }
 })
 
