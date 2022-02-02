@@ -38,17 +38,34 @@ transactionsRoutes.delete("/:index", (request, response) => {
     } else {
         response.status(404).json({ error: "Not found" });
     }
-    
+
 })
 
 //Route to Update
 
 transactionsRoutes.put("/:index", (request, response) => {
-    expenseArray[request.params.arrayIndex] = request.body; //We use req.body to the value of array position we selected
-    response.status(200).json(expenseArray[request.params.arrayIndex]);
-});
+    let { index } = request.params;
 
-//API is built!!! 🥳🥳
+    if (!expenseArr[index]) {
+        response.status(422).json({
+            error: "Not found"
+        })
+    }
 
-module.exports = route;
+    let { item_name, amount, date, from, category } = request.body;
+    if (item_name && amount && date && from && category) {
+        expenseArr[index] = {
+            item_name, amount, date, from, category
+        };
+        response.json(expenseArr[index]);
+    } else {
+        response.status(422).json({
+            error: "Please provide all fields"
+        })
+    }
+})
+
+
+
+    module.exports = route;
 
