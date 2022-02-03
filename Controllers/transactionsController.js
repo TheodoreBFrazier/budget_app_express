@@ -9,7 +9,7 @@ transactionsRoutes.get("/", (request, response) => {
 
 //Route for index ie. transactions/1
 
-transactionsRoutes.get("/:index", (request, response) => {
+transactionsRoutes.get("/:index", (request, response) => { //GET request to  retrieve a single index 
     const { index } = request.params;
     if (transactionArray[index]) {
         response.send(transactionArray[index]);
@@ -23,8 +23,8 @@ transactionsRoutes.get("/:index", (request, response) => {
 //Route to create a NEW transaction
 
 transactionsRoutes.post("/", (request, response) => { //post allows us to pass date through response body
-    expenseArray.push(request.body); //expenseArray is stored in memory - pushing HTML for data into it
-    response.json(expenseArray[expenseArray.length - 1]);
+    transactionArray.push(request.body); //expenseArray is stored in memory - pushing HTML for data into it
+    response.json(transactionArray[transactionArray.length - 1]);
 })
 
 //Route to DELETE a transaction @ index
@@ -32,8 +32,8 @@ transactionsRoutes.post("/", (request, response) => { //post allows us to pass d
 transactionsRoutes.delete("/:index", (request, response) => {
     const { index } = request.params;
 
-    if (expenseArray[index]) {
-        let removedExpense = expenseArray.splice(request.params.arrayIndex, 1);
+    if (transactionArray[index]) {
+        let removedExpense = transactionArray.splice(request.params.arrayIndex, 1);
         response.json(removedExpense[0]);
     } else {
         response.status(404).json({ error: "Not found" });
@@ -46,7 +46,7 @@ transactionsRoutes.delete("/:index", (request, response) => {
 transactionsRoutes.put("/:index", (request, response) => {
     let { index } = request.params;
 
-    if (!expenseArr[index]) {
+    if (!transactionArray[index]) {
         response.status(422).json({
             error: "Not found"
         })
@@ -54,10 +54,10 @@ transactionsRoutes.put("/:index", (request, response) => {
 
     let { item_name, amount, date, from, category } = request.body;
     if (item_name && amount && date && from && category) {
-        expenseArr[index] = {
+        transactionArray[index] = {
             item_name, amount, date, from, category
         };
-        response.json(expenseArr[index]);
+        response.json(transactionArray[index]);
     } else {
         response.status(422).json({
             error: "Please provide all fields"
@@ -67,5 +67,5 @@ transactionsRoutes.put("/:index", (request, response) => {
 
 
 
-    module.exports = transactionsRoutes;
+module.exports = transactionsRoutes;
 
