@@ -5,7 +5,7 @@ https://github.com/TheodoreBFrazier/budget_app_express
 https://github.com/TheodoreBFrazier/budget_app_frontend
 
 ## Deployed Backend Link
-https://tf-budgeting-app-backend.herokuapp.com/
+https://tf-budgeting-app-backend.herokuapp.com
 
 ## Deployed Frontend Link
-https://tf-backend-budgetapp.herokuapp.com/
+hhttps://focused-meitner-dffe5f.netlify.app
