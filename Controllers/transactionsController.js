@@ -9,12 +9,12 @@ transactionsRoutes.get("/", (request, response) => {
 
 //Route for index ie. transactions/1
 
-transactionsRoutes.get("/:index", (request, response) => { //GET request to  retrieve a single index 
-    const { index } = request.params;
-    if (transactionArray[index]) {
-        response.send(transactionArray[index]);
+transactionsRoutes.get("/:id", (request, response) => { //GET request to  retrieve a single index 
+    const { id } = request.params;
+    if (transactionArray[id]) {
+        response.send(transactionArray[id]);
     } else {
-        response.send("Error no expense at index: 🤦🏾‍♂️ " + index);
+        response.send("Error no expense at index: 🤦🏾‍♂️ " + id);
     }
 })
 
@@ -29,10 +29,10 @@ transactionsRoutes.post("/", (request, response) => { //post allows us to pass d
 
 //Route to DELETE a transaction @ index
 
-transactionsRoutes.delete("/:index", (request, response) => {
-    const { index } = request.params;
+transactionsRoutes.delete("/:id", (request, response) => {
+    const { id } = request.params;
 
-    if (transactionArray[index]) {
+    if (transactionArray[id]) {
         let removedExpense = transactionArray.splice(request.params.arrayIndex, 1);
         response.json(removedExpense[0]);
     } else {
@@ -43,10 +43,10 @@ transactionsRoutes.delete("/:index", (request, response) => {
 
 //Route to Update
 
-transactionsRoutes.put("/:index", (request, response) => {
-    let { index } = request.params;
+transactionsRoutes.put("/:id", (request, response) => {
+    let { id } = request.params;
 
-    if (!transactionArray[index]) {
+    if (!transactionArray[id]) {
         response.status(422).json({
             error: "Not found"
         })
@@ -54,10 +54,10 @@ transactionsRoutes.put("/:index", (request, response) => {
 
     let { item_name, amount, date, from, category } = request.body;
     if (item_name && amount && date && from && category) {
-        transactionArray[index] = {
+        transactionArray[id] = {
             item_name, amount, date, from, category
         };
-        response.json(transactionArray[index]);
+        response.json(transactionArray[id]);
     } else {
         response.status(422).json({
             error: "Please provide all fields"
