@@ -33,7 +33,7 @@ transactionsRoutes.delete("/:id", (request, response) => {
     const { id } = request.params;
 
     if (transactionArray[id]) {
-        let removedExpense = transactionArray.splice(request.params.arrayIndex, 1);
+        let removedExpense = transactionArray.splice(request.params.arrayIndex, id);
         response.json(removedExpense[0]);
     } else {
         response.status(404).json({ error: "Not found" });
